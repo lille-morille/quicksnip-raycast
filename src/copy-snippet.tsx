@@ -21,7 +21,7 @@ export default function Command() {
     <List>
       {languages?.map((l) => (
         <List.Item
-        key={l.lang}
+          key={l.lang}
           icon={{ source: iconUrlForLanguage(l.lang) }}
           title={l.lang}
           actions={
@@ -86,4 +86,3 @@ function markdownForSnippet(snippet: Snippet, language: Language): string {
   _Made by [${snippet.author}](https://github.com/${snippet.author})_
   `;
 }
-
