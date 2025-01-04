@@ -1,3 +1,3 @@
-# QuickSnip
+# QuickSnip-Raycast
 
-An open-source project that categorizes handy code snippets across various programming languages.
+A Raycast extension to grab snippets from [QuickSnip](https://quicksnip.dev/)!
