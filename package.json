@@ -13,8 +13,7 @@
     {
       "name": "copy-snippet",
       "title": "Copy snippet",
-      "subtitle": "Find and copy a code snippet",
-      "description": "Find a code snippet using the QuickSnip tool",
+      "description": "Find a code snippet using QuickSnip, then copy it to your clipboard.",
       "mode": "view"
     }
   ],
