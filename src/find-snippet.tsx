@@ -8,8 +8,6 @@ import {
   Snippet,
 } from "./api";
 import { useFetch } from "@raycast/utils";
-import { Clipboard } from "@raycast/api";
-import { showHUD } from "@raycast/api";
 
 /**
  * Copy snippet command. Shows a list of languages to open snippets
@@ -55,13 +53,8 @@ function LanguageSnippets({ language }: { language: Language }) {
               detail={<List.Item.Detail markdown={markdownForSnippet(snippet, language)} />}
               actions={
                 <ActionPanel>
-                  <Action
-                    title="Copy to Clipboard"
-                    onAction={async () => {
-                      await Clipboard.copy(snippet.code);
-                      await showHUD("📋 Snippet copied to clipboard!");
-                    }}
-                  />
+                  <Action.Paste content={snippet.code} />
+                  <Action.CopyToClipboard content={snippet.code} />
                 </ActionPanel>
               }
             />

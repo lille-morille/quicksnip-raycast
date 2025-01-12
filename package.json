@@ -11,9 +11,9 @@
   "license": "MIT",
   "commands": [
     {
-      "name": "copy-snippet",
-      "title": "Copy Snippet",
-      "description": "Find a code snippet using QuickSnip, then copy it to your clipboard.",
+      "name": "find-snippet",
+      "title": "Find Snippet",
+      "description": "Find a code snippet using QuickSnip, then copy it to your clipboard or paste it directly into your application.",
       "mode": "view"
     }
   ],
