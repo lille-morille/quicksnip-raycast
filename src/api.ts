@@ -1,12 +1,12 @@
 const baseUrl = "https://quicksnip.dev";
 
 export interface Language {
-  lang: string;
+  name: string;
   icon: string;
 }
 
 export interface Category {
-  categoryName: string;
+  name: string;
   snippets: Snippet[];
 }
 

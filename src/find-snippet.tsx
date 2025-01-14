@@ -19,9 +19,9 @@ export default function Command() {
     <List>
       {languages?.map((l) => (
         <List.Item
-          key={l.lang}
-          icon={{ source: iconUrlForLanguage(l.lang) }}
-          title={l.lang}
+          key={l.name}
+          icon={{ source: iconUrlForLanguage(l.name) }}
+          title={l.name}
           actions={
             <ActionPanel>
               <Action.Push title="Snippets" target={<LanguageSnippets language={l} />} />
@@ -39,15 +39,15 @@ export default function Command() {
  * @returns
  */
 function LanguageSnippets({ language }: { language: Language }) {
-  const { data: categories } = useFetch<Category[]>(categoriesUrlForLanguage(language.lang));
+  const { data: categories } = useFetch<Category[]>(categoriesUrlForLanguage(language.name));
 
   return (
-    <List navigationTitle={`Search for ${language.lang} snippets`} isShowingDetail>
+    <List navigationTitle={`Search for ${language.name} snippets`} isShowingDetail>
       {categories?.map((category) => (
-        <List.Section title={category.categoryName} key={category.categoryName}>
+        <List.Section title={category.name} key={category.name}>
           {category.snippets.map((snippet) => (
             <List.Item
-              key={snippet.title}
+              key={category.name + snippet.title}
               title={snippet.title}
               keywords={snippet.tags}
               detail={<List.Item.Detail markdown={markdownForSnippet(snippet, language)} />}
@@ -72,7 +72,7 @@ function markdownForSnippet(snippet: Snippet, language: Language): string {
   return `
   # ${snippet.title}
   ${snippet.description}
-  \`\`\`${language.lang}
+  \`\`\`${language.name}
   ${snippet.code}
   \`\`\`
 
